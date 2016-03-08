@@ -22,10 +22,11 @@
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \title[Functional outliers]{Detecting outliers in functional data}
-\author[S. Nandi]{Subhrangshu Nandi \inst{1} \and Chengyue Wu \inst{2} \and Alicia Nieto-Reyes \inst{3} \and Michael A. Newton \inst{1}} 
+%\author[S. Nandi]{Subhrangshu Nandi \inst{1} \and Chengyue Wu \inst{2} \and Alicia Nieto-Reyes \inst{3} \and Michael A. Newton \inst{1}} 
+\author[S. Nandi]{Subhrangshu Nandi \inst{1} \and Chengyue Wu \inst{2} \and Michael A. Newton \inst{1}} 
 \institute[UW Madison]{\inst{1} University of Wisconsin-Madison \and %
-                      \inst{2} University of Science and Technology of China \and %
-                      \inst{3} Universidad de Cantabria}
+                      \inst{2} University of Science and Technology of China} %\and 
+%                      \inst{3} Universidad de Cantabria}
 
 %\author[S. Nandi]{Subhrangshu Nandi}
 %\institute[UW Madison]{
@@ -139,13 +140,13 @@ Need a measure of multivariate depth in $\Real ^ p$ and depth of ``functional'' 
 \frametitle{Functional data depth}
 \LARGE
 \begin{enumerate}
-\item The Fraiman and Muniz depth
+\item The Fraiman and Muniz depth \footnote{\cite{Fraiman_Muniz_2001_SEIO}}
 \vspace{0.25in}
-\item The h-modal depth
+\item The h-modal depth \footnote{\cite{Febrero-Bande_etal_2007_Environmetrics}}
 \vspace{0.25in}
-\item The random projection depth
+\item The random projection depth \footnote{\cite{Febrero-Bande_etal_2007_Environmetrics}}
 \vspace{0.25in}
-\item The half-space Tukey depth
+\item The half-space Tukey depth \footnote{\cite{Cuesta-Albertos_Nieto-Reyes_2008_CSDA}}
 \end{enumerate}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -245,7 +246,7 @@ We need to select $C$ such that in the absence of outliers, \[ \Prob\left( D_n(y
 
 %%%%%%%%%%%%%% Slide x %%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Bootstrap procedure for $C$}
+\frametitle{Bootstrap procedure for $C$ \footnote{\cite{Febrero-Bande_etal_2007_Environmetrics}}}
 \begin{enumerate}
 %\small
 \item[1] Obtain the functional depths $D_n(y_1), \dots, D_n(y_n)$, using any depth function
@@ -270,6 +271,8 @@ We need to select $C$ such that in the absence of outliers, \[ \Prob\left( D_n(y
 \item Choose technique that maximizes power
 \end{enumerate}
 \end{block}
+
+Unfortunately, it turned out to be not that simple!
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -288,6 +291,7 @@ We need to select $C$ such that in the absence of outliers, \[ \Prob\left( D_n(y
 \pause
 \includegraphics[scale = 0.23, page = 7]{Plots/chr13_frag66.pdf}
 \end{figure}
+\footnote{\cite{Febrero-Bande_delaFuente_2012_JSS}, \cite{R-fda}, \cite{Ramsay_Silverman_2002_Applied}, \cite{Ramsay_etal_2009_Functional_R}}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -331,9 +335,11 @@ Note: Normalizing and smoothing eliminates 30\% of possible shape outliers
 \begin{itemize}
 %\small
 \item Outlier detection in functional data significantly more challenging
-\item Different techniques have different strengths and weaknesses \\
-\hspace{0.5cm} 
-FMD better at detecting abrupt amplitude outliers; h-Mode and Projection based methods better at detecting shape outliers
+\item Different techniques have different strengths and weaknesses
+\begin{itemize}
+\item FMD better at detecting abrupt amplitude outliers; 
+\item h-Mode and Projection based methods better at detecting shape outliers
+\end{itemize}
 \item Outliers should be further investigated, instead of being discarded from the data
 \item Outlier detection may not be robust to choice of smoothing techniques
 \end{itemize}
