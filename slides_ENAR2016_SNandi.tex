@@ -321,6 +321,7 @@ Total image processed outliers: 373 (11.2\% of all samples) \\
   \hline
 \end{tabular}
 \end{table}
+Note: Normalizing and smoothing eliminates 30\% of possible shape outliers
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -330,13 +331,24 @@ Total image processed outliers: 373 (11.2\% of all samples) \\
 \begin{itemize}
 %\small
 \item Outlier detection in functional data significantly more challenging
-\item Different techniques have different strengths and weaknesses
+\item Different techniques have different strengths and weaknesses \\
+\hspace{0.5cm} 
+FMD better at detecting abrupt amplitude outliers; h-Mode and Projection based methods better at detecting shape outliers
 \item Outliers should be further investigated, instead of being discarded from the data
 \item Outlier detection may not be robust to choice of smoothing techniques
 \end{itemize}
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%% Slide x %%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{Reference}
+{\footnotesize{
+    \bibliographystyle{apalike}
+    \bibliography{bibTex_Reference}
+}}
+\end{frame}
 
 \end{document}
 
