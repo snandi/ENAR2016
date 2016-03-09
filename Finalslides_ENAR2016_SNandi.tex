@@ -51,7 +51,7 @@
 \vspace{0.5cm}
 \item Use them to detect outliers (distant realizations) in functional data
 \vspace{0.5cm}
-\item Apply them to an image-processing data of cells
+\item Apply them to simulated data with amplitude, phase and abscissa variability
 \end{enumerate}
 }}
 \end{frame}
@@ -59,7 +59,7 @@
 
 %%%%%%%%%%%%%% Slide x %%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{What the data looks like}
+\frametitle{Simulated data}
 \vspace{-0.5cm}
 \begin{figure}
 \includegraphics[scale = 0.3, page = 2]{Plots/chr13_frag66.pdf}
@@ -67,7 +67,7 @@
 
 \vspace{-0.5cm}
 \begin{block}{Goal of the project}
-To estimate a consensus profile (some measure of average) of these realizations (curves)
+To estimate a consensus profile (some measure of average) of these realizations (curves) with (i) amplitude variability, (ii) phase variability and (iii) abscissa variability (different lengths of curves)
 \end{block}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -262,34 +262,28 @@ We need to select $C$ such that in the absence of outliers, \[ \Prob\left( D_n(y
 
 %%%%%%%%%%%%%% Slide x %%%%%%%%%%%%%%
 \begin{frame}
-\frametitle{Application to image processing data}
+\frametitle{Application to simulated data}
 \Large
 \begin{block}{Comparison of outliers by different depth functions}
 \begin{enumerate}
-\item Detect outliers by image processing
 \item Detect outliers by different data depths
+\vspace{1cm}
 \item Choose technique that maximizes power
 \end{enumerate}
 \end{block}
 
-Unfortunately, it turned out to be not that simple!
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%% Slide x %%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Case study: application to sample of 23 curves}
-\vspace{-0.5cm}
+Steps: Detect outliers --> Under-weight distant curves --> Register curves, to eliminate phase variability --> Estimate consensus curve
+
 \begin{figure}[t]
-\includegraphics[scale = 0.23, page = 3]{Plots/OutlierComparisons_66.pdf}
+\includegraphics[scale = 0.3, page = 6]{Plots/chr13_frag66.pdf}
 \hspace{0.5cm}
-\pause
-\includegraphics[scale = 0.23, page = 4]{Plots/OutlierComparisons_66.pdf} \\
-\includegraphics[scale = 0.23, page = 6]{Plots/chr13_frag66.pdf}
-\pause
-\hspace{0.5cm}
-\pause
-\includegraphics[scale = 0.23, page = 7]{Plots/chr13_frag66.pdf}
+\includegraphics[scale = 0.3, page = 7]{Plots/chr13_frag66.pdf}
 \end{figure}
 \footnote{\cite{Febrero-Bande_delaFuente_2012_JSS}, \cite{R-fda}, \cite{Ramsay_Silverman_2002_Applied}, \cite{Ramsay_etal_2009_Functional_R}}
 \end{frame}
@@ -300,13 +294,12 @@ Unfortunately, it turned out to be not that simple!
 \frametitle{Results}
 \begin{itemize}
 \item Outlier comparison applied to 144 samples, each with at least 20 curves
-\item Images of each curve analyzed, and tagged as ``Poor'' or ``Good'' quality
 \item Curves were normalized by its median, smoothed by B-spline ($4^{th}$ order)
 \item Outliers of all samples were estimated by four different data-depth methods
 \item Power of outlier detection was estimated
 \end{itemize}
 \pause
-Total image processed outliers: 373 (11.2\% of all samples) \\
+Total simulated outliers: 350 (10\% of all samples) \\
 % latex table generated in R 3.2.2 by xtable 1.8-0 package
 % Sun Mar  6 00:30:24 2016
 \begin{table}[ht]
